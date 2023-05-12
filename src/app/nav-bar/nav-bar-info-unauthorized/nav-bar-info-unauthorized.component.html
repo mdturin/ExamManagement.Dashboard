@@ -7,10 +7,15 @@
     </li>
     <li class="nav-item list-item">
       <img src="assets/images/register-color-logo.png" alt="logo" class="logo">
-      <button class="nav-link btn">Regiser</button>
+      <button class="nav-link btn"
+      (click)="openModal(registerModal)">Regiser</button>
     </li>
 </ul>
 
 <ng-template #loginModal>
   <app-login></app-login>
+</ng-template>
+
+<ng-template #registerModal>
+  <app-register></app-register>
 </ng-template>
