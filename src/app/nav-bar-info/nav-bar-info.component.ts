@@ -6,4 +6,6 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./nav-bar-info.component.css']
 })
 export class NavBarInfoComponent {
+  isAuthorized: boolean = true;
+  constructor() { }
 }
