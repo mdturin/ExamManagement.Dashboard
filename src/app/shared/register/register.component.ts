@@ -20,4 +20,6 @@ export class RegisterComponent {
     event.preventDefault();
     this.modalService.open(this.loginComponent, {backdrop: 'static', centered: true});
   }
+
+  register(){}
 }
