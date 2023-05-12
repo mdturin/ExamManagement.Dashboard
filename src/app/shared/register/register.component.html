@@ -1,57 +1,66 @@
 <div class="modal-body">
-    <button
-      type="button"
-      class="btn-close btn-close-white"
-      data-bs-dismiss="modal"
-      aria-label="Close"
-      (click)="closeModal()"
-    ></button>
-    <div class="myform bg-dark">
-      <h1 class="text-center">Register Form</h1>
-      <form>
-        <div class="mb-3 mt-4">
-          <label for="Name" class="form-label">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Name"
-          />
-        </div>
-        <div class="mb-3 mt-4">
-          <label for="Organization" class="form-label">Organization</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Organization"
-          />
-        </div>
-        <div class="mb-3 mt-4">
-          <label for="Email" class="form-label">Email</label>
-          <input
-            type="email"
-            class="form-control"
-            id="Email"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="Password1" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="Password1"
-          />
-        </div>
-        <div class="mb-3">
-          <label for="Password2" class="form-label">Confirm Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="Password2"
-          />
-        </div>
-        <button type="submit" class="btn btn-light mt-3" (click)="register()">Register</button>
-        <p>Has a account? <button (click)="openLoginModal($event)">Login Here</button></p>
-      </form>
-    </div>
+  <button
+    type="button"
+    class="btn-close btn-close-white"
+    data-bs-dismiss="modal"
+    aria-label="Close"
+    (click)="closeModal()"
+  ></button>
+  <div class="myform bg-dark">
+    <h1 class="text-center">Register Form</h1>
+    <form (ngSubmit)="register()" [formGroup]="registerForm">
+      <div class="mb-3 mt-4">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          formControlName="name"
+        />
+      </div>
+      <div class="mb-3 mt-4">
+        <label for="organization" class="form-label">Organization</label>
+        <input
+          type="text"
+          class="form-control"
+          id="organization"
+          formControlName="organization"
+        />
+      </div>
+      <div class="mb-3 mt-4">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          formControlName="email"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          formControlName="password"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="confirmPassword"
+          formControlName="confirmPassword"
+        />
+      </div>
+      <button type="submit" class="btn btn-light mt-3"
+      [disabled]="!registerForm.valid"
+      >Register</button>
+      <p>
+        Has a account?
+        <button (click)="openLoginModal($event)">Login Here</button>
+      </p>
+    </form>
   </div>
-  
+</div>
