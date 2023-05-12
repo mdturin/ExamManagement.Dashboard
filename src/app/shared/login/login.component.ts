@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from '../register/register.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/Services/auth.service';
+import { HttpService } from 'src/app/Services/http.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +14,11 @@ export class LoginComponent {
   loginForm!: FormGroup;
   registerComponent = RegisterComponent;
 
-  constructor(public modalService: NgbModal, public formBuilder: FormBuilder) {
+  constructor(
+    public modalService: NgbModal,
+    public formBuilder: FormBuilder,
+    public authService: AuthService,
+  ) {
     this.buildLoginForm();
   }
 
@@ -38,6 +44,12 @@ export class LoginComponent {
 
   login(event: Event) {
     event.preventDefault();
-    console.log(this.loginForm.value);
+    let email = this.loginForm.value.email;
+    let password = this.loginForm.value.password;
+    this.authService.login(email, password).subscribe(
+      (response) => {
+        this.closeModal();
+      }
+    );
   }
 }

@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar-info-authorized.component.css']
 })
 export class NavBarInfoAuthorizedComponent {
-
+  logout(){
+    localStorage.removeItem('currentUser');
+  }
 }

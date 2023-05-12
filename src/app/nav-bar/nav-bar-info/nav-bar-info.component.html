@@ -1,4 +1,4 @@
-<div [ngSwitch]="isAuthorized">
+<div [ngSwitch]="isUserLoggedIn()">
   <div *ngSwitchCase="true">
     <app-nav-bar-info-authorized></app-nav-bar-info-authorized>
   </div>

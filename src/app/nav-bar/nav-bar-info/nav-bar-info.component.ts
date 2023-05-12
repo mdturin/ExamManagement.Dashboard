@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-nav-bar-info',
@@ -6,6 +7,10 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./nav-bar-info.component.css']
 })
 export class NavBarInfoComponent {
-  isAuthorized: boolean = false;
-  constructor() { }
+  constructor(private authService: AuthService) {
+  }
+
+  public isUserLoggedIn(): boolean {
+    return this.authService.isUserLoggedIn();
+  }
 }
