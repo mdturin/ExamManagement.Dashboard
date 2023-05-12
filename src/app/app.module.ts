@@ -3,26 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NavBarInfoComponent } from './nav-bar-info/nav-bar-info.component';
-import { NavBarInfoAuthorizedComponent } from './nav-bar-info-authorized/nav-bar-info-authorized.component';
-import { NavBarInfoUnauthorizedComponent } from './nav-bar-info-unauthorized/nav-bar-info-unauthorized.component';
+import { NavBarModule } from './nav-bar/nav-bar.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavBarComponent,
-    NavBarInfoComponent,
-    NavBarInfoAuthorizedComponent,
-    NavBarInfoUnauthorizedComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, NavBarModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
