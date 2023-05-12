@@ -2,7 +2,7 @@
     <li class="nav-item list-item">
       <img src="assets/images/login-color-logo.png" alt="logo" class="logo">
       <button class="nav-link btn"
-      (click)="openModal(modalContent)"
+      (click)="openModal(loginModal)"
       >Login</button>
     </li>
     <li class="nav-item list-item">
@@ -11,17 +11,6 @@
     </li>
 </ul>
 
-<ng-template #modalContent>
-  <div class="modal-header">
-    <h4 class="modal-title">Modal Title</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modalService.dismissAll()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    Modal Content
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="modalService.dismissAll()">Close</button>
-  </div>
+<ng-template #loginModal>
+  <app-login></app-login>
 </ng-template>
