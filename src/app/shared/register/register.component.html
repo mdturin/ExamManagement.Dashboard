@@ -17,6 +17,9 @@
           id="name"
           formControlName="name"
         />
+        <p *ngIf="registerForm.controls['name'].errors?.required">
+          Field is required
+        </p>
       </div>
       <div class="mb-3 mt-4">
         <label for="organization" class="form-label">Organization</label>
@@ -54,9 +57,13 @@
           formControlName="confirmPassword"
         />
       </div>
-      <button type="submit" class="btn btn-light mt-3"
-      [disabled]="!registerForm.valid"
-      >Register</button>
+      <button
+        type="submit"
+        class="btn btn-light mt-3"
+        [disabled]="registerForm.invalid"
+      >
+        Register
+      </button>
       <p>
         Has a account?
         <button (click)="openLoginModal($event)">Login Here</button>
