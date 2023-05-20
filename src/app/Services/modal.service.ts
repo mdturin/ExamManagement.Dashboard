@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { isEmpty } from 'lodash';
-import { IModal } from '../module/shared/models/imodal';
+import { IModal } from '../Models/imodal';
 
 @Injectable({
   providedIn: 'root',
